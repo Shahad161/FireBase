@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "444406377915",
-    "project_id": "chat-app-b3cdd",
-    "storage_bucket": "chat-app-b3cdd.appspot.com"
+    "project_number": "791904407629",
+    "firebase_url": "https://char-app-cddde-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "char-app-cddde",
+    "storage_bucket": "char-app-cddde.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:444406377915:android:17223bfb3898ffd9a6289e",
+        "mobilesdk_app_id": "1:791904407629:android:65ec0440596adb26940c04",
         "android_client_info": {
           "package_name": "com.example.firebase"
         }
       },
       "oauth_client": [
         {
-          "client_id": "444406377915-chm8oc7dfp8c4dnh7592ejihdn6ugnqb.apps.googleusercontent.com",
+          "client_id": "791904407629-c42iscaiao139v3quccabs81jh0fqhjs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBVRhQdrrU0NZ1wwMictVTaeQVGZoAk64Y"
+          "current_key": "AIzaSyBINgH3AreVQM5U0e5X37FDxem6b3FsCMg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "444406377915-chm8oc7dfp8c4dnh7592ejihdn6ugnqb.apps.googleusercontent.com",
+              "client_id": "791904407629-c42iscaiao139v3quccabs81jh0fqhjs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
