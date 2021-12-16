@@ -1,23 +1,40 @@
 package com.example.firebase
 
-import android.util.Log
 import androidx.lifecycle.*
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.database.ktx.database
+import com.example.firebase.model.User
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 
-class MainViewModel: ViewModel(){
-
-    val myRef = Firebase
-        .database
-        .reference
-
-    val massage = MutableLiveData<String>()
 
 
+class MainViewModel: ViewModel(), ChatInteractionListener{
+
+    private val repository = Repository
+
+    val userName = MutableLiveData<String>()
+    val messages = MutableLiveData<String>()
+
+    val chat = MutableLiveData<List<User>>()
+
+
+    @ExperimentalCoroutinesApi
     fun onClickSend(){
-        Log.i("kkk", massage.value.toString())
-        myRef.child("name").setValue(massage.value.toString())
+        repository.sendMessages(
+                User(
+                    name = userName.value.toString(),
+                    message =  messages.value.toString(),
+
+                )
+            )
+        viewModelScope.launch {
+            repository.fetchChat().collect {
+                chat.postValue(it)
+            }
+        }
+
     }
+
 
 }

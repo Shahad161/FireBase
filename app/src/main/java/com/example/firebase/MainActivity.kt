@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.example.firebase.databinding.ActivityMainBinding
+import com.example.firebase.model.User
+import com.firebase.ui.database.FirebaseListOptions
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.setVariable(BR.viewModel, viewModel)
         binding.lifecycleOwner = this
+
+        binding.recycler.adapter =
+            ChatRecyclerView(mutableListOf(), this.viewModel)
+
     }
 
 }
