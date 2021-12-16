@@ -19,10 +19,13 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.setVariable(BR.viewModel, viewModel)
         binding.lifecycleOwner = this
-
-        binding.recycler.adapter =
-            ChatRecyclerView(mutableListOf(), this.viewModel)
-
+        setUp()
     }
 
+    private fun setUp(){
+        binding.recycler.adapter =
+            ChatRecyclerView(mutableListOf(), this.viewModel)
+    }
+
+    
 }

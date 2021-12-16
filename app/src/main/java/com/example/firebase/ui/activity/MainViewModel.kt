@@ -1,9 +1,7 @@
 package com.example.firebase.ui.activity
 
-import android.util.Log
 import androidx.lifecycle.*
-import com.example.firebase.model.Repository
-import com.example.firebase.model.User
+import com.example.firebase.model.*
 import com.example.firebase.util.getCurrentDateTime
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
@@ -11,7 +9,7 @@ import kotlinx.coroutines.launch
 
 
 
-
+@ExperimentalCoroutinesApi
 class MainViewModel: ViewModel(), ChatInteractionListener {
 
     private val repository = Repository
@@ -22,21 +20,26 @@ class MainViewModel: ViewModel(), ChatInteractionListener {
     val chat = MutableLiveData<List<User>>()
 
 
-    @ExperimentalCoroutinesApi
-    fun onClickSend(){
-        repository.sendMessages(
-            User(
-                name = userName.value.toString(),
-                message = messages.value.toString(),
-                date = getCurrentDateTime()
-                )
-        )
+    init {
         viewModelScope.launch {
             repository.fetchChat().collect {
                 chat.postValue(it)
             }
         }
+    }
 
+
+    fun onClickSend(){
+        if (!messages.value.isNullOrEmpty()){
+            repository.sendMessages(
+                User(
+                    name = userName.value.toString(),
+                    message = messages.value.toString(),
+                    date = getCurrentDateTime()
+                )
+            )
+            messages.postValue("")
+        }
     }
 
 

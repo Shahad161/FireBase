@@ -38,7 +38,6 @@ abstract class BaseRecyclerAdapter<T>(
         )
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
-
         if (holder is ItemViewHolder && items.isNotEmpty() ) {
             holder.binding.setVariable(BR.item, items[position])
             holder.binding.setVariable(BR.listener, listener)

@@ -6,7 +6,10 @@ import com.example.firebase.ui.base.BaseInteractionListener
 import com.example.firebase.ui.base.BaseRecyclerAdapter
 
 
-class ChatRecyclerView(cartItems: List<User>, listener: ChatInteractionListener)
+class ChatRecyclerView(
+    cartItems: List<User>,
+    listener: ChatInteractionListener,
+)
     : BaseRecyclerAdapter<User>(cartItems, listener) {
 
     override val layoutId: Int = R.layout.item_message
