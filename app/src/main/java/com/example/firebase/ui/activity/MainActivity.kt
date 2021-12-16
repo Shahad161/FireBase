@@ -1,12 +1,12 @@
-package com.example.firebase
+package com.example.firebase.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import com.example.firebase.BR
+import com.example.firebase.R
 import com.example.firebase.databinding.ActivityMainBinding
-import com.example.firebase.model.User
-import com.firebase.ui.database.FirebaseListOptions
 
 class MainActivity : AppCompatActivity() {
 

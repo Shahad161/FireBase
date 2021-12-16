@@ -11,7 +11,7 @@
 
         <variable
             name="listener"
-            type="com.example.firebase.BaseInteractionListener" />
+            type="com.example.firebase.ui.activity.ChatInteractionListener" />
 
     </data>
 

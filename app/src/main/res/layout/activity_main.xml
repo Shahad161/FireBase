@@ -8,13 +8,13 @@
 
         <variable
             name="viewModel"
-            type="com.example.firebase.MainViewModel" />
+            type="com.example.firebase.ui.activity.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".ui.activity.MainActivity">
 
 
         <EditText

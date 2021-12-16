@@ -1,6 +1,5 @@
-package com.example.firebase
+package com.example.firebase.model
 
-import com.example.firebase.model.User
 import com.google.firebase.database.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.*
@@ -16,6 +15,7 @@ object Repository {
             .child("Chat").push()
         ref.child("name").setValue(user.name)
         ref.child("message").setValue(user.message)
+        ref.child("date").setValue(user.date)
     }
 
 

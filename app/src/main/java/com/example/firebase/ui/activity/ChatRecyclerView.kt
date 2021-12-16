@@ -1,6 +1,9 @@
-package com.example.firebase
+package com.example.firebase.ui.activity
 
+import com.example.firebase.R
 import com.example.firebase.model.User
+import com.example.firebase.ui.base.BaseInteractionListener
+import com.example.firebase.ui.base.BaseRecyclerAdapter
 
 
 class ChatRecyclerView(cartItems: List<User>, listener: ChatInteractionListener)

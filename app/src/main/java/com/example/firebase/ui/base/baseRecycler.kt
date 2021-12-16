@@ -1,11 +1,11 @@
-package com.example.firebase
+package com.example.firebase.ui.base
 
 import android.annotation.SuppressLint
 import android.view.*
 import androidx.databinding.*
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.firebase.base.AppDiffUtil
+import com.example.firebase.BR
 
 
 @SuppressLint("NotifyDataSetChanged")
@@ -54,6 +54,7 @@ abstract class BaseRecyclerAdapter<T>(
             ::areContentSame))
         items = newItems
         diffResult.dispatchUpdatesTo(this)
+        notifyDataSetChanged()
     }
 
     fun getItems() = items

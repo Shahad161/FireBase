@@ -1,4 +1,4 @@
-package com.example.firebase.base
+package com.example.firebase.ui.base
 
 import androidx.recyclerview.widget.DiffUtil
 
