@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/projects/FireBase/app/src/main/res/drawable-v24/rounded_message_blue.xml" value="0.1537037037037037" />
         <entry key="..\:/projects/FireBase/app/src/main/res/drawable-v24/rounded_message_gray.xml" value="0.1537037037037037" />
+        <entry key="..\:/projects/FireBase/app/src/main/res/drawable/button.xml" value="0.24871794871794872" />
         <entry key="..\:/projects/FireBase/app/src/main/res/drawable/card.xml" value="0.2526041666666667" />
         <entry key="..\:/projects/FireBase/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.2526041666666667" />
+        <entry key="..\:/projects/FireBase/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.24871794871794872" />
         <entry key="..\:/projects/FireBase/app/src/main/res/drawable/user_name.xml" value="0.2526041666666667" />
         <entry key="..\:/projects/FireBase/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/projects/FireBase/app/src/main/res/layout/item_message.xml" value="0.4" />

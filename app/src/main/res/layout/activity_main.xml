@@ -13,6 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/offWhite"
         tools:context=".ui.activity.MainActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,7 +44,7 @@
                 android:layout_marginStart="8dp"
                 android:text="Chat"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -66,68 +67,69 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ll_layout_bar"
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@color/offWhite"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent">
 
-            <EditText
-                android:id="@+id/et_message"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight=".5"
-                android:background="@drawable/rounded_message_gray"
-                android:backgroundTint="@android:color/white"
-                android:hint="Type a message..."
-                android:inputType="textShortMessage"
-                android:padding="10dp"
-                android:singleLine="true"
-                android:text="@={viewModel.messages}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btn_send"
-                app:layout_constraintHorizontal_bias="0.496"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_message_gray"
+            android:hint="Type a message..."
+            android:inputType="textShortMessage"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="@={viewModel.messages}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_send"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginBottom="6dp"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_message_blue"
-                android:backgroundTint="@color/colorBlue"
-                android:onClick="@{() -> viewModel.onClickSend()}"
-                android:text="Send"
-                android:textColor="@android:color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_send"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/button"
+            android:onClick="@{() -> viewModel.onClickSend()}"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/et_message"
+            app:layout_constraintEnd_toEndOf="@+id/et_message"
+            app:layout_constraintTop_toTopOf="@+id/et_message"
+            android:backgroundTint="#090B12"
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:orientation="vertical"
             app:items="@{viewModel.chat}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@+id/ll_layout_bar"
+            app:layout_constraintBottom_toTopOf="@+id/et_message"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintVertical_bias="0.0"
+            tools:listitem="@layout/item_message" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            app:layout_constraintBottom_toTopOf="@+id/et_message"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-            tools:listitem="@layout/item_message_left" />
+            app:loading="@{viewModel.chat}"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

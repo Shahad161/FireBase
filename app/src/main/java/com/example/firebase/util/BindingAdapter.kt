@@ -2,6 +2,7 @@ package com.example.firebase.util
 
 
 import android.annotation.SuppressLint
+import android.view.View
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
@@ -32,3 +33,21 @@ fun formatString(textView: TextView, time : Long) {
     val formatter = SimpleDateFormat("HH:mm")
     textView.text = formatter.format(time).toString()
 }
+
+
+@BindingAdapter(value = ["app:sender"])
+fun sender(view: View, user : String) {
+    view.isVisible = user == "Shahad"
+}
+
+@BindingAdapter(value = ["app:receiver"])
+fun receiver(view: View, user : String) {
+    view.isVisible = user != "Shahad"
+}
+
+
+@BindingAdapter(value = ["app:loading"])
+fun loading(view: View, list : List<User>?) {
+    view.isVisible = list.isNullOrEmpty()
+}
+
