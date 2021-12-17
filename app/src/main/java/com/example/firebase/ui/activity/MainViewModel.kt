@@ -30,7 +30,7 @@ class MainViewModel: ViewModel(), ChatInteractionListener {
 
 
     fun onClickSend(){
-        if (!messages.value.isNullOrEmpty()){
+        if (!messages.value.isNullOrEmpty() && !userName.value.isNullOrEmpty()){
             repository.sendMessages(
                 User(
                     name = userName.value.toString(),

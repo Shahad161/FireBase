@@ -7,12 +7,12 @@ import com.example.firebase.ui.base.BaseRecyclerAdapter
 
 
 class ChatRecyclerView(
-    cartItems: List<User>,
+    var cartItems: List<User>,
     listener: ChatInteractionListener,
 )
     : BaseRecyclerAdapter<User>(cartItems, listener) {
 
-    override val layoutId: Int = R.layout.item_message
+    override val layoutId: Int = R.layout.item_message_left
 
     override fun <T> areItemsTheSame(
         oldItemPosition: Int,

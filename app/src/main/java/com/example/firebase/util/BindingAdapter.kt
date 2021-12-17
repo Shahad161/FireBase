@@ -1,10 +1,16 @@
 package com.example.firebase.util
 
 
+import android.annotation.SuppressLint
+import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.firebase.model.User
+import com.example.firebase.ui.activity.ChatRecyclerView
 import com.example.firebase.ui.base.BaseRecyclerAdapter
-
+import com.google.android.material.card.MaterialCardView
+import java.text.SimpleDateFormat
 
 
 @BindingAdapter(value = ["app:items"])
@@ -19,3 +25,10 @@ fun <T> setRecyclerItems(view: RecyclerView, items: List<T>?) {
     }
 }
 
+
+@SuppressLint("SimpleDateFormat")
+@BindingAdapter(value = ["app:formatString"])
+fun formatString(textView: TextView, time : Long) {
+    val formatter = SimpleDateFormat("HH:mm")
+    textView.text = formatter.format(time).toString()
+}
