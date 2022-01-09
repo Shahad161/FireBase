@@ -10,7 +10,6 @@ class AppDiffUtil<T>(
 ) : DiffUtil.Callback() {
 
     override fun getOldListSize() = oldList.size
-
     override fun getNewListSize() = newList.size
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int) =
